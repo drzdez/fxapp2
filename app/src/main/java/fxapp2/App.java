@@ -6,13 +6,16 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+
+import javafx.application.Application;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.web.HTMLEditor;
+
 
 // import javafx.scene.layout.StackPane;
 // import javafx.scene.layout.GridPane;
@@ -33,9 +36,26 @@ public class App extends Application {
         // Scene scene = new Scene(new StackPane(l), 640, 480);
 
          // AnchorPane page = (AnchorPane) FXMLLoader.load(HelloFX.class.getResource("testscr1.fxml"));
-         AnchorPane page = (AnchorPane) FXMLLoader.load(App.class.getResource("Edit.fxml"));
+//         AnchorPane page = (AnchorPane) FXMLLoader.load(App.class.getResource("Edit.fxml"));
+
+
+
+         // VBox page = (VBox) FXMLLoader.load(App.class.getResource("EvMainSmall.fxml"));
+         FXMLLoader root = new FXMLLoader(App.class.getResource("EvMainSmall.fxml"));
+
+         VBox page = (VBox) root.load();
+         
+
          Scene scene = new Scene(page);
          stage.setScene(scene);
+
+          //Set the Stage
+         EvMainSmallController lController = root.getController();
+         lController.setStage(stage);
+
+         // NewProjectController newProjectController = loader.getController();
+         // newProjectController.setStage(stage);
+
          stage.show();
          
     }
