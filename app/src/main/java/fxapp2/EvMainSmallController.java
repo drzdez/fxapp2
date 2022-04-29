@@ -10,11 +10,11 @@ import java.io.File;
 import java.io.IOException;
 
 import org.w3c.dom.*;
+
+import fxapp2.xmldoc.XMLWrapperDOM;
+
 import javax.xml.parsers.*;
 import java.io.*;
-
-// app specific
-import com.evocodsys.xml.XMLWrapperDOM;
 
 public class EvMainSmallController  {
     // public void handleButtonAction(ActionEvent event) {
